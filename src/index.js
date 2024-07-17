@@ -1,17 +1,50 @@
-import React from 'react';
+import React, { lazy, Suspense } from "react";
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter,RouterProvider} from "react-router-dom"
+
+const App = lazy(() => import("./App"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const PageNotFound = lazy(()=>import("./pages/PageNotFound"));
+const routes=createBrowserRouter([
+  {
+    path:"/",
+    element:(<Suspense>
+      <App />
+    </Suspense>),
+    children:[
+      {
+        path:"/",
+        element:( <Suspense>
+          {" "}
+          <HomePage />
+        </Suspense>)
+      },
+      {
+        path:"/about",
+        element:(
+          <Suspense>
+            <AboutPage />
+          </Suspense>
+        )
+      },
+      {
+        path:"*",
+        element:(
+          <Suspense>
+           <PageNotFound></PageNotFound>
+          </Suspense>
+        )
+      }
+    ]
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={routes} ></RouterProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
