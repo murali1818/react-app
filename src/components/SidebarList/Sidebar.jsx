@@ -4,7 +4,7 @@ import SidebarList from './SidebarList';
 const Sidebar = () => {
   return (
         <div className="sidebar-container">
-        <div className="sidebar-container__brand">Learning</div>
+        <div className="sidebar-container__brand">Karpagam tech</div>
         <SidebarList></SidebarList>
       </div>
   )

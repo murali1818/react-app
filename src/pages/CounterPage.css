@@ -1,0 +1,65 @@
+
+  
+  .counter-display {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .counter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .increment-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .increment-button:hover {
+    background-color: #218838;
+  }
+  
+  .increment-button:disabled {
+    background-color: #94d3a2;
+    cursor: not-allowed;
+  }
+  
+  .decrement-button {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .decrement-button:hover {
+    background-color: #e0a800;
+  }
+  
+  .decrement-button:disabled {
+    background-color: #ffdf7e;
+    cursor: not-allowed;
+  }
+  
+  .stop-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .stop-button:hover {
+    background-color: #c82333;
+  }
+  
+  .stop-button:disabled {
+    background-color: #e57373;
+    cursor: not-allowed;
+  }
+  

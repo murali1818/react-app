@@ -15,6 +15,14 @@ function SidebarList() {
             listItemText: "contact",
             link: "/contact",
           },
+          {
+            listItemText: "Counter",
+            link: "/counter",
+          },
+          {
+            listItemText: "Form",
+            link: "/formpage",
+          },
       ];
       return (
         <div className="sidebar-container__list">
